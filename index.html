@@ -5,105 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DSC 106 — Project 2</title>
   <style>
-    :root {
-      --text: #1a1a1a;
-      --muted: #444;
-      --border: #ddd;
-      --bg: #fafafa;
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
-      margin: 0;
-      padding: 0;
-    }
-    .wrap {
-      max-width: 52rem;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin: 0 0 0.35rem;
-      letter-spacing: -0.02em;
-    }
-    .subtitle { color: var(--muted); font-size: 0.95rem; margin: 0; }
-    section {
-      margin-bottom: 2.75rem;
-    }
+    body { font-family: system-ui, sans-serif; line-height: 1.6; margin: 0; background: #fafafa; color: #1a1a1a; }
+    .wrap { max-width: 52rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    section { margin-bottom: 2.5rem; }
     p { margin: 0 0 1rem; }
-    ul { margin: 0 0 1rem; padding-left: 1.25rem; }
-    figure {
-      margin: 1.25rem 0;
-      padding: 0;
-    }
-    figure.viz-embed {
-      margin: 1.25rem 0;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
+    figure.viz-embed { margin: 0; max-width: 100%; overflow-x: auto; }
     figure.viz-embed iframe {
-      display: block;
-      width: 100%;
-      min-width: 1008px;
-      height: 780px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: #fff;
+      display: block; width: 100%; min-width: 1008px; height: 780px;
+      border: 1px solid #ddd; border-radius: 6px; background: #fff;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Project 2 — Exploratory visualization</h1>
-      <p class="subtitle">DSC 106 · Replace this subtitle with your name or team if required.</p>
-    </header>
-
-    <section id="proposition" aria-label="Proposition">
-      <p><!-- State your main claim or question here. --></p>
+    <section id="proposition">
+      <p></p>
     </section>
 
-    <section id="visualization-a" aria-label="Side A visualization">
+    <section id="visualization-a">
       <figure class="viz-embed">
-        <iframe
-          src="side_a.html"
-          title="Side A: U.S. map — abortion rate change vs clinics remaining (2017–2020)"
-          loading="lazy"></iframe>
+        <iframe src="side_a.html" title="Side A visualization" loading="lazy"></iframe>
       </figure>
-      <p><!-- Design decisions and rationale: encodings, color, scales, annotations. --></p>
-      <ul>
-        <li><!-- Decision 1 --></li>
-        <li><!-- Decision 2 --></li>
-      </ul>
+      <p></p>
     </section>
 
-    <section id="visualization-b" aria-label="Side B visualization">
+    <section id="visualization-b">
       <figure class="viz-embed">
-        <iframe
-          src="side_b.html"
-          title="Side B: U.S. map — counties without clinics vs out-of-state travel (2020)"
-          loading="lazy"></iframe>
+        <iframe src="side_b.html" title="Side B visualization" loading="lazy"></iframe>
       </figure>
-      <p><!-- Design decisions and rationale. --></p>
-      <ul>
-        <li><!-- Decision 1 --></li>
-        <li><!-- Decision 2 --></li>
-      </ul>
+      <p></p>
     </section>
 
-    <section id="reflection" aria-label="Final reflection">
-      <p><!-- Your final reflection write-up goes here. --></p>
+    <section id="reflection">
+      <p></p>
     </section>
   </div>
 </body>

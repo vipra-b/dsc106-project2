@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSC 106 — Project 2</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #444;
+      --border: #ddd;
+      --bg: #fafafa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin: 0; }
+    section {
+      margin-bottom: 2.75rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 650;
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    p { margin: 0 0 1rem; }
+    ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+    figure {
+      margin: 1.25rem 0;
+      padding: 0;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+    }
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.65rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Project 2 — Exploratory visualization</h1>
+      <p class="subtitle">DSC 106 · Replace this subtitle with your name or team if required.</p>
+    </header>
+
+    <section id="proposition" aria-labelledby="proposition-heading">
+      <h2 id="proposition-heading">Proposition</h2>
+      <p><!-- State your main claim or question here. --></p>
+    </section>
+
+    <section id="visualization-a" aria-labelledby="viz-a-heading">
+      <h2 id="viz-a-heading">Visualization A (side A)</h2>
+      <figure>
+        <img src="side_a.png" alt="Visualization A — replace this alt text with a short description of the chart for accessibility.">
+        <figcaption>
+          <strong>Caption.</strong> <!-- Short figure caption. -->
+        </figcaption>
+      </figure>
+      <h3>Design decisions and rationale</h3>
+      <p><!-- Describe encodings, color, scales, annotations, and why you chose them. --></p>
+      <ul>
+        <li><!-- Decision 1 --></li>
+        <li><!-- Decision 2 --></li>
+      </ul>
+    </section>
+
+    <section id="visualization-b" aria-labelledby="viz-b-heading">
+      <h2 id="viz-b-heading">Visualization B (side B)</h2>
+      <figure>
+        <img src="side_b.png" alt="Visualization B — replace this alt text with a short description of the chart.">
+        <figcaption>
+          <strong>Caption.</strong> <!-- Short figure caption. -->
+        </figcaption>
+      </figure>
+      <h3>Design decisions and rationale</h3>
+      <p><!-- Describe encodings, color, scales, annotations, and why you chose them. --></p>
+      <ul>
+        <li><!-- Decision 1 --></li>
+        <li><!-- Decision 2 --></li>
+      </ul>
+    </section>
+
+    <section id="reflection" aria-labelledby="reflection-heading">
+      <h2 id="reflection-heading">Final reflection</h2>
+      <p><!-- Your final reflection write-up goes here. --></p>
+    </section>
+  </div>
+</body>
+</html>

@@ -152,6 +152,18 @@
     main > section + section {
       margin-top: 2rem;
     }
+
+    ul.decisions li {
+      margin-bottom: 1.15em;
+    }
+
+    ul.decisions li em {
+      display: block;
+      font-style: italic;
+      color: var(--color-neutral-40);
+      margin: 0.2em 0 0.35em;
+      font-size: 92%;
+    }
   </style>
 </head>
 <body>
@@ -184,12 +196,38 @@
         </figcaption>
       </figure>
 
-      <p>Design Decisions and Rationale:</p>
+      <p>
+        This map supports the proposition by pairing darker choropleth fills (larger abortion rate declines, 2017–2020) with √-scaled bubbles for remaining clinics, so “big drop + few clinics” reads as a pattern. The bullets below score each central design choice for how earnest versus persuasive it is, and name alternatives we considered.
+      </p>
 
-      <ul>
-        <li>Geographic projection and how states are encoded.</li>
-        <li>Color scale and legend design.</li>
-        <li>Annotations, bubble scaling, and source line.</li>
+      <p><strong>Design decisions and rationale</strong> (3–5 central choices; <strong>earnestness score</strong> from −2 = most deceptive to +2 = most earnest, in 0.5 steps):</p>
+
+      <ul class="decisions">
+        <li>
+          <strong>Three-bin choropleth for % change in abortion rate.</strong>
+          <em>Earnestness: −0.5.</em>
+          We collapsed a continuous outcome into three bands (≤−20%, −5% to −20%, &gt;−5%) so the map reads in clear “worse / middle / better” tiers and the choropleth stays legible at a glance. That helps persuasion by making many states look uniformly “bad” in the darkest color, but it also hides how extreme some drops are compared with others—we considered a continuous color scale or more bins, which would have been more faithful but noisier and less immediately dramatic.
+        </li>
+        <li>
+          <strong>√-scaling clinic counts before mapping to bubble area.</strong>
+          <em>Earnestness: +1.5.</em>
+          Using the square root of clinic count for radius follows standard practice for area marks, so California does not swallow the map and rank order among states stays meaningful. It works well for honesty and readability; the main alternative was linear radius, which we rejected because it exaggerates differences among high-clinic states and distracts from the rate-change story.
+        </li>
+        <li>
+          <strong>Annotating only states where clinic loss and rate decline align.</strong>
+          <em>Earnestness: −1.5.</em>
+          Callouts highlight Missouri, South Dakota, and similar cases where fewer clinics sit beside steep rate declines, which steers the eye toward confirming examples. That makes the visualization more persuasive than a neutral tour, but it quietly downplays states where clinics fell and rates rose or held—we thought about labeling counterexamples and decided against it because it would dilute the FOR narrative.
+        </li>
+        <li>
+          <strong>Subtitle framing (“8 of the 12 states that lost abortion clinics…”).</strong>
+          <em>Earnestness: −1.</em>
+          The statistic is accurate for that subset and gives readers a memorable fraction without opening the full state table. It persuades by sounding comprehensive while restricting the denominator to clinic losers only; an alternative was a national or all-states count, which would have read as less dramatic.
+        </li>
+        <li>
+          <strong>Title as a causal claim (“Fewer abortion clinics means fewer abortions”).</strong>
+          <em>Earnestness: −1.</em>
+          Declarative wording sells a mechanism the map cannot test—only association in one period is shown. We considered hedged language (“tend to,” “often”) that would score higher on earnestness but weaken the punch; we kept the strong title for persuasive effect.
+        </li>
       </ul>
     </section>
 
@@ -206,12 +244,34 @@
         </figcaption>
       </figure>
 
-      <p>Design Decisions and Rationale:</p>
+      <p><strong>Design decisions and rationale</strong> (3–5 central choices; <strong>earnestness score</strong> from −2 = most deceptive to +2 = most earnest, in 0.5 steps):</p>
 
-      <ul>
-        <li>Bivariate classification (two dimensions on one map).</li>
-        <li>Color palette for the four state types.</li>
-        <li>Callouts and how they support the counter-argument.</li>
+      <ul class="decisions">
+        <li>
+          <strong>Binary thresholds for “few clinics” and “many residents left state.”</strong>
+          <em>Earnestness: +1.</em>
+          We defined “few clinics” as ≥80% of counties with no known clinic and “many” travelers as ≥20% getting abortions out of state, which matches the footnote and lets the reader reproduce the 2×2 grid. This sorts states into a clean story that helps persuasion, but any cutoff is somewhat arbitrary. We could have used medians or terciles instead, which would shift states around and make the extremes feel less dramatic.
+        </li>
+        <li>
+          <strong>2×2 bivariate color scheme (four distinct fills).</strong>
+          <em>Earnestness: −0.5.</em>
+          A four-color palette puts both dimensions into one choropleth, so the reader can immediately see “high squeeze” states (dark red) versus states with access or low cross-border travel. The palette itself is polarizing though, since the dark red is much more attention-grabbing than the muted blue and gray used for the other categories, which pushes the reader toward reading red states as bad before they engage with the numbers. A more neutral bivariate palette would treat all four quadrants more evenly.
+        </li>
+        <li>
+          <strong>Title and subtitle that interpret the pattern (“displace abortions, not demand”).</strong>
+          <em>Earnestness: −1.5.</em>
+          The title states “Closing abortion clinics does not reduce abortions. It sends residents out of state to get them,” which hands the reader a causal conclusion before they even look at the map. This goes well beyond what one cross-section can prove, and it strongly steers them toward agreeing with the against proposition. A more neutral subtitle would stick to definitions only but with a weaker narrative hook.
+        </li>
+        <li>
+          <strong>Leader annotations (e.g. Missouri, South Dakota) with exact percentages.</strong>
+          <em>Earnestness: −0.5.</em>
+          Calling out the most extreme states grounds the argument in real numbers and makes the bivariate encoding memorable. The choice of which states to label is one-sided though, since all five callouts (Missouri, South Dakota, Wyoming, West Virginia, South Carolina) come from the dark-red “high squeeze” category, and none of the other three quadrants get annotations. A more balanced approach would label notable states from each category to let the reader compare.
+        </li>
+        <li>
+          <strong>Geographic clustering claim in the subtitle (South and Plains).</strong>
+          <em>Earnestness: −1.</em>
+          Pointing out regional clustering directs attention to a “belt” of high-travel, low-access states and makes the pattern feel systematic. If we removed regional language, the colors would carry more weight and communicate the pattern.
+        </li>
       </ul>
     </section>
 

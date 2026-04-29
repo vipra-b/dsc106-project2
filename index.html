@@ -274,7 +274,17 @@
     <section>
       <h2>Final Reflection</h2>
 
-      <p><em>Write your final reflection paragraphs here.</em></p>
+      <p>
+        Designing two opposing visualizations from the same dataset made it really obvious how arbitrary a lot of standard design choices actually are. We picked a geospatial map for both sides early on because the data is state-level, and a map immediately gives the reader a sense of seeing the whole country with patterns laid out before they even start looking at numbers. That framing is doing a lot of work, since once you put data on a map, the reader assumes you’re showing them something comprehensive and objective. We leaned on that assumption pretty hard for both sides. Decisions that feel neutral in isolation, like which states to annotate, where to put a threshold, how to bin a continuous variable, or what verb to use in a title, turned out to be the main levers of persuasion. The most surprising thing was how little we actually had to transform the data to flip the story. The for-prop and against-prop visualizations use almost the same raw columns and tell contradictory stories, which made us realize that a lot of what we’d call analysis is really just rhetorical framing.
+      </p>
+
+      <p>
+        The hardest part was making the deception subtle instead of obvious. Our strongest deceptive moves, like selectively annotating only the states that support the proposition, writing causal titles from correlational data, and picking thresholds that maximize quadrant contrast, are also things we see all the time in legitimate data journalism. That blurred the line between persuasion and misleading in ways that were genuinely uncomfortable to think about. We ended up thinking of the distinction less as a binary and more as a spectrum tied to intent and transparency. A design choice feels more acceptable when the transformation is out in the open (like the threshold disclosed in our footnote) and more misleading when it’s hidden (like our selective annotations, which a reader would never catch unless they pulled the underlying numbers themselves).
+      </p>
+
+      <p>
+        After doing this, we’d define ethical analysis and visualization as requiring the designer to be able to articulate every transformation and framing choice, and to make sure those choices don’t actively hide information that would reverse the reader’s interpretation. By that standard, the for-prop visualization pushes pretty close to the line. The map shows all 50 states but only annotates the ones where clinic loss and rate decline co-occur, so a reader who trusts the map has no way of knowing they should look for the counterexamples sitting right there in the data (Oklahoma, Kentucky, Mississippi). The against-prop visualization stays closer to the acceptable side. The bivariate pattern it shows is real, the geographic clustering is genuine, and the title’s claim is directionally supported by the data even though we state it with more confidence than the evidence strictly warrants.
+      </p>
     </section>
   </main>
 </body>

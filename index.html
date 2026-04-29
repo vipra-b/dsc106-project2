@@ -65,6 +65,21 @@
       border-radius: 6px;
       background: #fff;
     }
+    figure.viz-embed {
+      margin: 1.25rem 0;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    figure.viz-embed iframe {
+      display: block;
+      width: 100%;
+      min-width: 1008px;
+      height: 780px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+    }
     figcaption {
       font-size: 0.9rem;
       color: var(--muted);
@@ -87,8 +102,11 @@
 
     <section id="visualization-a" aria-labelledby="viz-a-heading">
       <h2 id="viz-a-heading">Visualization A (side A)</h2>
-      <figure>
-        <img src="side_a.png" alt="Visualization A — replace this alt text with a short description of the chart for accessibility.">
+      <figure class="viz-embed">
+        <iframe
+          src="side_a.html"
+          title="Side A: U.S. map — abortion rate change vs clinics remaining (2017–2020)"
+          loading="lazy"></iframe>
         <figcaption>
           <strong>Caption.</strong> <!-- Short figure caption. -->
         </figcaption>
@@ -103,8 +121,11 @@
 
     <section id="visualization-b" aria-labelledby="viz-b-heading">
       <h2 id="viz-b-heading">Visualization B (side B)</h2>
-      <figure>
-        <img src="side_b.png" alt="Visualization B — replace this alt text with a short description of the chart.">
+      <figure class="viz-embed">
+        <iframe
+          src="side_b.html"
+          title="Side B: U.S. map — counties without clinics vs out-of-state travel (2020)"
+          loading="lazy"></iframe>
         <figcaption>
           <strong>Caption.</strong> <!-- Short figure caption. -->
         </figcaption>

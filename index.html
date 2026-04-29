@@ -40,30 +40,11 @@
     section {
       margin-bottom: 2.75rem;
     }
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 650;
-      margin: 0 0 1rem;
-      color: var(--text);
-    }
-    h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-    }
     p { margin: 0 0 1rem; }
     ul { margin: 0 0 1rem; padding-left: 1.25rem; }
     figure {
       margin: 1.25rem 0;
       padding: 0;
-    }
-    figure img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: #fff;
     }
     figure.viz-embed {
       margin: 1.25rem 0;
@@ -80,12 +61,6 @@
       border-radius: 6px;
       background: #fff;
     }
-    figcaption {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 0.65rem;
-      line-height: 1.5;
-    }
   </style>
 </head>
 <body>
@@ -95,51 +70,39 @@
       <p class="subtitle">DSC 106 · Replace this subtitle with your name or team if required.</p>
     </header>
 
-    <section id="proposition" aria-labelledby="proposition-heading">
-      <h2 id="proposition-heading">Proposition</h2>
+    <section id="proposition" aria-label="Proposition">
       <p><!-- State your main claim or question here. --></p>
     </section>
 
-    <section id="visualization-a" aria-labelledby="viz-a-heading">
-      <h2 id="viz-a-heading">Visualization A (side A)</h2>
+    <section id="visualization-a" aria-label="Side A visualization">
       <figure class="viz-embed">
         <iframe
           src="side_a.html"
           title="Side A: U.S. map — abortion rate change vs clinics remaining (2017–2020)"
           loading="lazy"></iframe>
-        <figcaption>
-          <strong>Caption.</strong> <!-- Short figure caption. -->
-        </figcaption>
       </figure>
-      <h3>Design decisions and rationale</h3>
-      <p><!-- Describe encodings, color, scales, annotations, and why you chose them. --></p>
+      <p><!-- Design decisions and rationale: encodings, color, scales, annotations. --></p>
       <ul>
         <li><!-- Decision 1 --></li>
         <li><!-- Decision 2 --></li>
       </ul>
     </section>
 
-    <section id="visualization-b" aria-labelledby="viz-b-heading">
-      <h2 id="viz-b-heading">Visualization B (side B)</h2>
+    <section id="visualization-b" aria-label="Side B visualization">
       <figure class="viz-embed">
         <iframe
           src="side_b.html"
           title="Side B: U.S. map — counties without clinics vs out-of-state travel (2020)"
           loading="lazy"></iframe>
-        <figcaption>
-          <strong>Caption.</strong> <!-- Short figure caption. -->
-        </figcaption>
       </figure>
-      <h3>Design decisions and rationale</h3>
-      <p><!-- Describe encodings, color, scales, annotations, and why you chose them. --></p>
+      <p><!-- Design decisions and rationale. --></p>
       <ul>
         <li><!-- Decision 1 --></li>
         <li><!-- Decision 2 --></li>
       </ul>
     </section>
 
-    <section id="reflection" aria-labelledby="reflection-heading">
-      <h2 id="reflection-heading">Final reflection</h2>
+    <section id="reflection" aria-label="Final reflection">
       <p><!-- Your final reflection write-up goes here. --></p>
     </section>
   </div>

@@ -196,37 +196,33 @@
         </figcaption>
       </figure>
 
-      <p>
-        This map supports the proposition by pairing darker choropleth fills (larger abortion rate declines, 2017–2020) with √-scaled bubbles for remaining clinics, so “big drop + few clinics” reads as a pattern. The bullets below score each central design choice for how earnest versus persuasive it is, and name alternatives we considered.
-      </p>
-
       <p><strong>Design decisions and rationale:</strong></p>
 
       <ul class="decisions">
         <li>
-          <strong>Three-bin choropleth for % change in abortion rate.</strong>
+          <strong>Binning abortion rate change into three ordered categories for choropleth fill.</strong>
           <em>Earnestness: −0.5.</em>
-          We collapsed a continuous outcome into three bands (≤−20%, −5% to −20%, &gt;−5%) so the map reads in clear “worse / middle / better” tiers and the choropleth stays legible at a glance. That helps persuasion by making many states look uniformly “bad” in the darkest color, but it also hides how extreme some drops are compared with others—we considered a continuous color scale or more bins, which would have been more faithful but noisier and less immediately dramatic.
+          We took the continuous % change in abortion rate and bucketed it into three groups: large decrease (≤−20%), moderate decrease (−5% to −20%), and stable/increase (&gt;−5%). Bucketing data is fine. The issue is that we picked these specific cutoffs to make the visual contrast as strong as possible, so Missouri’s −98% drop and South Dakota’s −74% drop end up in the same dark bucket as states that only fell 21%. A huge amount of variation gets hidden, and the map looks way more uniformly dark than it should. A continuous color scale would have shown the real spread, but the categorical version reads cleaner and hits harder.
         </li>
         <li>
-          <strong>√-scaling clinic counts before mapping to bubble area.</strong>
-          <em>Earnestness: +1.5.</em>
-          Using the square root of clinic count for radius follows standard practice for area marks, so California does not swallow the map and rank order among states stays meaningful. It works well for honesty and readability; the main alternative was linear radius, which we rejected because it exaggerates differences among high-clinic states and distracts from the rate-change story.
+          <strong>Square-root scaling of clinic count for bubble size.</strong>
+          <em>Earnestness: +1.</em>
+          We √-scaled the clinic counts before turning them into bubble sizes, which is just the right way to do area-encoded circles. Without it, California’s 173 clinics would blow up into a bubble that swallows the whole map. The transformation is honest and keeps everything readable while still preserving the rank order. It also happens to help the proposition though, since the darkest states end up with the tiniest bubbles, and the visual co-occurrence of clinic loss and rate decline jumps right out at you.
         </li>
         <li>
-          <strong>Annotating only states where clinic loss and rate decline align.</strong>
+          <strong>Restricting annotations to states where clinic loss and rate decline co-occurred.</strong>
           <em>Earnestness: −1.5.</em>
-          Callouts highlight Missouri, South Dakota, and similar cases where fewer clinics sit beside steep rate declines, which steers the eye toward confirming examples. That makes the visualization more persuasive than a neutral tour, but it quietly downplays states where clinics fell and rates rose or held—we thought about labeling counterexamples and decided against it because it would dilute the FOR narrative.
+          The five states we annotated were picked specifically because they line up the cleanest between losing clinics and rates going down. States like Arkansas (−33% clinics, +2% rate), South Carolina (−25% clinics, 0% rate), and Kentucky (+100% clinics, +26% rate) are sitting right there on the map but never get called out. This is probably the most deceptive thing in the whole visualization, because it makes the reader think clinic loss reliably predicts rate decline when the data really doesn’t say that. Labeling some counterexamples was an option we considered, but doing that would have basically killed the proposition.
         </li>
         <li>
-          <strong>Subtitle framing (“8 of the 12 states that lost abortion clinics…”).</strong>
+          <strong>Framing the subtitle as a summary statistic (“8 of 12 states”).</strong>
           <em>Earnestness: −1.</em>
-          The statistic is accurate for that subset and gives readers a memorable fraction without opening the full state table. It persuades by sounding comprehensive while restricting the denominator to clinic losers only; an alternative was a national or all-states count, which would have read as less dramatic.
+          Our subtitle says “8 of the 12 states that lost abortion clinics saw abortion rates fall.” Technically true, but the framing cherry-picks. Every state that didn’t lose clinics gets left out of the denominator, and 8/12 = 67% only sounds impressive if you ignore that a bunch of light blue states also had no clinic loss. A broader framing was on the table, but we went with this one because it gives the reader a concrete, credible-sounding number that most people aren’t going to dig into.
         </li>
         <li>
-          <strong>Title as a causal claim (“Fewer abortion clinics means fewer abortions”).</strong>
-          <em>Earnestness: −1.</em>
-          Declarative wording sells a mechanism the map cannot test—only association in one period is shown. We considered hedged language (“tend to,” “often”) that would score higher on earnestness but weaken the punch; we kept the strong title for persuasive effect.
+          <strong>Title written as a causal claim.</strong>
+          <em>Earnestness: −1.5.</em>
+          “Fewer abortion clinics means fewer abortions” basically claims causation, and “Restrictions are working” piles a value judgment on top of that. What we actually have is correlation across a single period (2017–2020), with no causal mechanism shown anywhere. A safer title like “States with fewer abortion clinics tend to have lower abortion rates” would have been more honest but a lot less catchy.
         </li>
       </ul>
     </section>
